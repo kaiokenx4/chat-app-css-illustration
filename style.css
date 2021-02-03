@@ -1,0 +1,331 @@
+:root {
+  /* TEXT */
+  --pale-violet: hsl(276, 100%, 81%); /* (sub-heading at the top of the app ui) */
+  --moderate-violet: hsl(276, 55%, 52%); /* (chat on the left) */
+  --desaturated-dark-violet: hsl(271, 15%, 43%); /* (chat on the right) */
+  --grayish-blue: hsl(206, 6%, 79%); /* (placeholder text) */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%); /* (main heading) */
+  --dark-grayish-violet: hsl(270, 7%, 64%); /* (paragraph) */
+
+  /* GRADIENTS */
+  --light-magenta: hsl(293, 100%, 63%);
+  --light-violet: hsl(264, 100%, 61%);
+
+  /* SECONDARY */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 20%, 96%); /*  (app background) */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%); /*  (submit button background) */
+  --very-light-magenta: hsl(289, 100%, 72%); /*  (radio button outline) */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Rubik', sans-serif;
+  position: relative;
+  background-color: var(--light-grayish-violet);
+}
+
+body::before {
+  content: "";
+  width: 52rem;
+  height: 95rem;
+  background-image: linear-gradient(to top, var(--light-violet), var(--light-magenta));
+  position: absolute;
+  border-radius: 80rem;
+  top: -43.5rem;
+  left: -33.2rem;
+}
+
+.container {
+  padding: 3.4rem;
+  padding-top: 6.6rem;
+}
+
+.phone {
+  margin: 0 auto;
+  width: 24.8rem;
+  border-radius: 3rem;
+  padding: 1.1rem;
+  position: relative;
+  box-shadow: .7rem 2.6rem 4.3rem -1.2rem hsl(271, 36%, 24%, .3);
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.phone::before {
+  content: "";
+  background-color: var(--white);
+  position: absolute;
+  width: 13rem;
+  height: 2.8rem;
+  border-radius: 1.35rem;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.app-ui {
+  background-color: var(--light-grayish-violet);
+  border-radius: 2rem;
+}
+
+.app-header {
+  background-image: linear-gradient(to left, var(--light-magenta), var(--light-violet));
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: .7rem;
+  border-bottom-left-radius: .7rem;
+  display: flex;
+  align-items: center;
+  padding: 2.8rem 1.2rem 1.2rem 1.2rem;
+  box-shadow: 0 .8rem 1rem -.6rem hsl(271, 36%, 24%, .25);
+}
+
+.back-icon {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  transform: scaleX(.95) scaleY(1.8);
+  padding-left: .3rem;
+  padding-right: .8rem;
+}
+
+.walker-avatar {
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+.walker-info {
+  line-height: .8;
+  flex: 1;
+  margin-left: .7rem;
+}
+
+.walker-name {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.walker-availability {
+  font-size: .8rem;
+  color: var(--pale-violet);
+}
+
+.three-dots-icon {
+  color: var(--pale-violet);
+  transform: scaleY(.7);
+}
+
+/* APP UI CHAT SECTION*/
+.app-chat {
+  padding: .9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-message {
+  font-size: .8rem;
+  padding: .8rem;
+  border-radius: 1.2rem;
+  margin-bottom: .8rem;
+}
+.walker-text-message {
+  border-bottom-left-radius: .6rem;
+  background-color: hsla(276, 100%, 81%, 0.2);
+  width: 61%;
+  color: var(--moderate-violet);
+  align-self: flex-start;
+}
+.owner-text-message {
+  border-bottom-right-radius: .6rem;
+  background-color: var(--white);
+  max-width: 61%;
+  color: var(--desaturated-dark-violet);
+  align-self: flex-end;
+  box-shadow: 0 .8rem 1rem -.6rem hsl(271, 36%, 24%, .14);
+}
+
+.walker-text-message:nth-child(6) {
+  margin-top: .6rem;
+}
+
+.image-thumbnails {
+  margin-top: .6rem;
+  margin-bottom: .9rem;
+  align-self: flex-end;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: .7rem;
+  grid-auto-columns: min-content;
+}
+
+.image-thumbnails > * {
+  border-radius: 1rem;
+  width: 4rem;
+}
+
+.booking-offer {
+  background-image: linear-gradient(to right, var(--light-magenta), var(--light-violet));
+  color: var(--white);
+  border-bottom-left-radius: .6rem;
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
+
+.booking-offer__radio-btn {
+  background-color: transparent;
+  border: 1px solid var(--very-light-magenta);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  margin-right: .9rem;
+}
+
+.booking-offer__session-length {
+  margin-right: auto;
+}
+
+.booking-offer__price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-right: .8rem;
+}
+
+.new-message-box {
+  height: 3.4rem;
+  margin-top: .8rem;
+  background-color: var(--white);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem;
+  padding-left: 1.7rem;
+}
+
+.new-message {
+  color: var(--grayish-blue);
+  font-size: 1rem;
+}
+
+.send-message-btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  color: var(--white);
+  background-color: var(--very-dark-desaturated-violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-summary {
+  text-align: center;
+  z-index: 20;
+}
+
+.app-summary h1 {
+  color: var(--very-dark-desaturated-violet);
+  font-weight: 500;
+  font-size: 3.9rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+.app-description {
+  color: var(--dark-grayish-violet);
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+@media only screen and (min-width: 37.5em) {
+  body::before {
+    top: -32rem;
+    left: -18rem;
+  }
+}
+
+@media only screen and (min-width: 56.25em) {
+
+  body {
+    overflow: hidden;
+  }
+
+  body::before {
+    top: -30rem;
+    left: -22rem;
+  }
+
+  body::after {
+    content: "";
+    width: 52rem;
+    height: 95rem;
+    background-color: hsl(293, 100%, 63%, .03);
+    position: absolute;
+    border-radius: 80rem;
+    bottom: -28rem;
+    right: -35rem;
+  }
+
+  .container {
+    padding: 3rem 6rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    align-content: center;
+    align-items: center;
+  }
+
+  .phone {
+    margin: 0;
+    justify-self: end;
+  }
+
+  .app-summary {
+    max-width: 44rem;
+    text-align: left;
+    margin-left: 16%;
+  }
+
+  .app-summary h1 {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 78em) {
+
+  body::before {
+    top: -25.5rem;
+    left: -9.8rem;
+  }
+
+  body::after {
+    bottom: -28rem;
+    right: -20rem;
+  }
+}
+
+
+
+
+
+
+
